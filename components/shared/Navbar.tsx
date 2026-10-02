@@ -1,13 +1,214 @@
-import { ArrowLeftRight, Bell, Calendar, ChevronDown, MapPin, Menu, MessageSquare, Plus, Search } from "lucide-react";
+
+// "use client";
+
+// import {
+//     ArrowLeftRight, Bell,
+//     Calendar,
+//     ChevronDown,
+//     MapPin,
+//     Menu, MessageSquare, Plus,
+//     Search
+// } from "lucide-react";
+// import Image from "next/image";
+// import Link from "next/link";
+// import { useState } from "react";
+
+
+// const countries = [
+//     { name: "Bangladesh", flag: "/bangladesh.png" },
+//     { name: "United States", flag: "/usa.png" },
+//     { name: "United Kingdom", flag: "/uk.jpg" },
+//     { name: "Canada", flag: "/canada.png" },
+// ];
+
+// export default function Navbar() {
+//     const [isOpen, setIsOpen] = useState(false);
+//     const [selectedCountry, setSelectedCountry] = useState(countries[0]);
+//     return (
+//         <nav className="flex items-center justify-between gap-5 p-1  bg-white border-b pb-5 border-gray-200 sticky top-0 z-50 w-full shadow-sm rounded-lg">
+//             {/* completed 1 */}
+//             {/* Logo Section */}
+//             <Link href={'/'} className="flex items-center gap-2 sm:gap-3 shrink-0">
+//                 <Image
+//                     src="/rentyard_icon.png"
+//                     alt="Logo"
+//                     width={40}
+//                     height={40}
+//                     className="rounded object-cover shadow-sm"
+//                 />
+//                 <div className="hidden sm:flex items-center gap-2 shrink-0 pr-5 ">
+//                     <div>
+//                         <span className="text-xl sm:text-2xl font-bold tracking-tight text-blue-600 font-sans">
+//                             RentYard
+//                         </span>
+
+//                     </div>
+//                 </div>
+//             </Link>
+
+//             {/* Center Search Bar Section */}
+//             <div className="relative w-full max-w-xl mx-auto">
+//                 {/* Main Search Bar */}
+//                 <div className="flex items-center bg-white rounded-full p-1.5 shadow-sm border border-gray-200">
+
+//                     {/* Country Flag & Dropdown Toggle */}
+//                     <div
+//                         onClick={() => setIsOpen(!isOpen)}
+//                         className="flex items-center gap-1.5 px-2 py-1.5  shrink-0 cursor-pointer select-none"
+//                     >
+//                         <Image
+//                             src={selectedCountry.flag}
+//                             alt={selectedCountry.name}
+//                             width={24}
+//                             height={16}
+//                             className="rounded object-cover shadow-sm"
+//                         />
+//                         <ChevronDown className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+//                     </div>
+
+//                     {/* City or Place Input */}
+//                     <div className="flex items-center gap-1 px-2 py-1  flex-1 min-w-0">
+//                         <MapPin className="w-4 h-4 text-gray-400 shrink-0" />
+//                         <input
+//                             type="text"
+//                             placeholder="City or place"
+//                             className="w-full bg-transparent text-gray-700 placeholder-gray-400 text-xs sm:text-sm focus:outline-none truncate"
+//                         />
+//                     </div>
+
+//                     {/* Move-in Date Input */}
+//                     <div className="flex items-center gap-1 px-2 py-1 flex-1 min-w-0">
+//                         <Calendar className="w-4 h-4 text-gray-400 shrink-0" />
+//                         <input
+//                             type="text"
+//                             placeholder="Move-in date"
+//                             className="w-full bg-transparent text-gray-700 placeholder-gray-400 text-xs sm:text-sm focus:outline-none truncate"
+//                         />
+//                     </div>
+
+//                     {/* Search Button */}
+//                     <button className="bg-blue-600 hover:bg-blue-700 text-white p-2.5 rounded-full flex items-center justify-center transition shadow-sm shrink-0 ml-1">
+//                         <Search className="w-4 h-4" />
+//                     </button>
+//                 </div>
+
+//                 {/* Country Dropdown Menu */}
+//                 {isOpen && (
+//                     <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-2xl shadow-lg overflow-hidden z-50">
+//                         <div className="py-1">
+//                             {countries.map((country, index) => (
+//                                 <div
+//                                     key={index}
+//                                     onClick={() => {
+//                                         setSelectedCountry(country);
+//                                         setIsOpen(false);
+//                                     }}
+//                                     className="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 cursor-pointer transition"
+//                                 >
+//                                     <Image
+//                                         src={country.flag}
+//                                         alt={country.name}
+//                                         width={20}
+//                                         height={14}
+//                                         className="rounded object-cover shadow-sm"
+//                                     />
+//                                     <span className="text-xs sm:text-sm text-gray-700 font-medium">
+//                                         {country.name}
+//                                     </span>
+//                                 </div>
+//                             ))}
+//                         </div>
+//                     </div>
+//                 )}
+//             </div>
+
+//             {/* Right Actions & Profile Section */}
+//             <div className="hidden lg:flex items-center gap-2 sm:gap-3 shrink-0">
+//                 {/* Switch Button */}
+//                 <button className="flex items-center gap-2 text-gray-800 font-medium text-sm hover:text-black transition px-2 py-1">
+//                     <ArrowLeftRight className="w-5 h-5 text-gray-700" />
+//                     <span>Switch</span>
+//                 </button>
+
+//                 {/* List Property Button */}
+//                 <button className="flex items-center gap-2 text-gray-800 font-medium text-sm hover:text-black transition px-2 py-1">
+//                     <Plus className="w-5 h-5 text-gray-700" />
+//                     <span>List property</span>
+//                 </button>
+
+//                 {/* Messages/Chat Icon */}
+//                 <button className="hidden md:flex w-10 h-10 sm:w-11 sm:h-11 items-center justify-center rounded-2xl border border-gray-200 hover:bg-gray-50 text-gray-700 transition bg-white shadow-sm">
+//                     <MessageSquare className="w-5 h-5 stroke-[1.8]" />
+//                 </button>
+
+//                 {/* Notifications Icon */}
+//                 <button className="hidden md:flex w-10 h-10 sm:w-11 sm:h-11 items-center justify-center rounded-2xl border border-gray-200 hover:bg-gray-50 text-gray-700 transition bg-white shadow-sm">
+//                     <Bell className="w-5 h-5 stroke-[1.8]" />
+//                 </button>
+
+//                 {/* Profile & Menu Box */}
+//                 <button className="hidden md:flex items-center gap-3 px-3 py-1.5 h-11 rounded-2xl border border-gray-200 hover:bg-gray-50 transition bg-white shadow-sm">
+//                     <Menu className="w-5 h-5 text-gray-700 stroke-[1.8]" />
+//                     <div className="relative w-8 h-8 rounded-xl overflow-hidden border border-gray-200">
+//                         <Image
+//                             src="/man.png"
+//                             alt="User Profile"
+//                             fill
+//                             className="object-cover rounded-full"
+//                         />
+//                     </div>
+//                 </button>
+//             </div>
+//         </nav>
+//     );
+// }
+
+"use client";
+
+import {
+    ArrowLeftRight, Bell,
+    Calendar,
+    ChevronDown,
+    MapPin,
+    Menu, MessageSquare, Plus,
+    Search
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef, useState } from "react";
+
+const countries = [
+    { name: "Bangladesh", flag: "/bangladesh.png" },
+    { name: "United States", flag: "/usa.png" },
+    { name: "United Kingdom", flag: "/uk.jpg" },
+    { name: "Canada", flag: "/canada.png" },
+];
 
 export default function Navbar() {
+    const [isOpen, setIsOpen] = useState(false);
+    const [selectedCountry, setSelectedCountry] = useState(countries[0]);
+
+    // Search states
+    const [city, setCity] = useState("");
+    const [moveInDate, setMoveInDate] = useState("");
+
+    // Ref for date input to trigger native calendar picker smoothly
+    const dateInputRef = useRef<HTMLInputElement>(null);
+
+    const handleCalendarClick = () => {
+        if (dateInputRef.current) {
+            if (typeof dateInputRef.current.showPicker === "function") {
+                dateInputRef.current.showPicker();
+            } else {
+                dateInputRef.current.click();
+            }
+        }
+    };
+
     return (
-        <nav className="flex items-center justify-between gap-5  bg-white border-b pb-5 border-gray-200 sticky top-0 z-50 w-full shadow-sm">
-            {/* completed 1 */}
+        <nav className="flex items-center justify-between gap-5 p-1 bg-white border-b pb-5 border-gray-200 sticky top-0 z-50 w-full shadow-sm rounded-lg">
             {/* Logo Section */}
-            <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            <Link href={'/'} className="flex items-center gap-2 sm:gap-3 shrink-0">
                 <Image
                     src="/rentyard_icon.png"
                     alt="Logo"
@@ -16,83 +217,132 @@ export default function Navbar() {
                     className="rounded object-cover shadow-sm"
                 />
                 <div className="hidden sm:flex items-center gap-2 shrink-0 pr-5 ">
-                    <Link href="/">
+                    <div>
                         <span className="text-xl sm:text-2xl font-bold tracking-tight text-blue-600 font-sans">
                             RentYard
                         </span>
-
-                    </Link>
+                    </div>
                 </div>
-            </div>
+            </Link>
 
             {/* Center Search Bar Section */}
-            <div className="flex items-center bg-white rounded-full p-1.5 shadow-sm border border-gray-200 w-full max-w-xl">
+            <div className="relative w-full max-w-xl mx-auto">
+                {/* Main Search Bar */}
+                <div className="flex items-center bg-white rounded-full p-1.5 shadow-sm border border-gray-200">
 
-                {/* Country Flag & Dropdown */}
-                <div className="flex items-center gap-1.5 px-3 py-1.5 border-r border-gray-200 shrink-0">
-                    <Image
-                        src="/bangladesh.png"
-                        alt="Bangladesh Flag"
-                        width={24}
-                        height={16}
-                        className="rounded object-cover shadow-sm"
-                    />
-                    <ChevronDown className="w-4 h-4 text-gray-500" />
+                    {/* Country Flag & Dropdown Toggle */}
+                    <div
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="flex items-center gap-1.5 px-2 py-1.5 shrink-0 cursor-pointer select-none"
+                    >
+                        <Image
+                            src={selectedCountry.flag}
+                            alt={selectedCountry.name}
+                            width={24}
+                            height={16}
+                            className="rounded object-cover shadow-sm"
+                        />
+                        <ChevronDown className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+                    </div>
+
+                    {/* City or Place Input */}
+                    <div className="flex items-center gap-1 px-2 py-1 flex-1 min-w-0 border-l border-gray-100">
+                        <MapPin className="w-4 h-4 text-gray-400 shrink-0" />
+                        <input
+                            type="text"
+                            value={city}
+                            onChange={(e) => setCity(e.target.value)}
+                            placeholder="City or place"
+                            className="w-full bg-transparent text-gray-700 placeholder-gray-400 text-xs sm:text-sm focus:outline-none truncate"
+                        />
+                    </div>
+
+                    {/* Move-in Date Input (Fixed with useRef & showPicker) */}
+                    <div
+                        onClick={handleCalendarClick}
+                        className="relative flex items-center gap-1 px-2 py-1 flex-1 min-w-0 border-l border-gray-100 cursor-pointer select-none"
+                    >
+                        <Calendar className="w-4 h-4 text-gray-400 shrink-0" />
+
+                        <span className={`text-xs sm:text-sm truncate ${moveInDate ? "text-gray-700 font-medium" : "text-gray-400"}`}>
+                            {moveInDate || "Move-in date"}
+                        </span>
+
+                        {/* Hidden native date input */}
+                        <input
+                            ref={dateInputRef}
+                            type="date"
+                            value={moveInDate}
+                            onChange={(e) => setMoveInDate(e.target.value)}
+                            className="absolute opacity-0 pointer-events-none w-0 h-0"
+                        />
+                    </div>
+
+                    {/* Search Button */}
+                    <button
+                        onClick={() => console.log({ selectedCountry, city, moveInDate })}
+                        className="bg-blue-600 hover:bg-blue-700 text-white p-2.5 rounded-full flex items-center justify-center transition shadow-sm shrink-0 ml-1 cursor-pointer"
+                    >
+                        <Search className="w-4 h-4" />
+                    </button>
                 </div>
 
-                {/* City or Place Input */}
-                <div className="flex items-center gap-1 px-2 py-1 border-r border-gray-200 flex-1 min-w-0">
-                    <MapPin className="w-4 h-4 text-gray-400 shrink-0" />
-                    <input
-                        type="text"
-                        placeholder="City or place"
-                        className="w-full bg-transparent text-gray-700 placeholder-gray-400 text-xs sm:text-sm focus:outline-none truncate"
-                    />
-                </div>
-
-                {/* Move-in Date Input */}
-                <div className="flex items-center gap-1 px-2 py-1 flex-1 min-w-0">
-                    <Calendar className="w-4 h-4 text-gray-400 shrink-0" />
-                    <input
-                        type="text"
-                        placeholder="Move-in date"
-                        className="w-full bg-transparent text-gray-700 placeholder-gray-400 text-xs sm:text-sm focus:outline-none truncate"
-                    />
-                </div>
-
-                {/* Search Button */}
-                <button className="bg-blue-600 hover:bg-blue-700 text-white p-2.5 rounded-full flex items-center justify-center transition shadow-sm shrink-0 ml-1">
-                    <Search className="w-4 h-4" />
-                </button>
-
+                {/* Country Dropdown Menu */}
+                {isOpen && (
+                    <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-2xl shadow-lg overflow-hidden z-50">
+                        <div className="py-1">
+                            {countries.map((country, index) => (
+                                <div
+                                    key={index}
+                                    onClick={() => {
+                                        setSelectedCountry(country);
+                                        setIsOpen(false);
+                                    }}
+                                    className="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 cursor-pointer transition"
+                                >
+                                    <Image
+                                        src={country.flag}
+                                        alt={country.name}
+                                        width={20}
+                                        height={14}
+                                        className="rounded object-cover shadow-sm"
+                                    />
+                                    <span className="text-xs sm:text-sm text-gray-700 font-medium">
+                                        {country.name}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
             </div>
 
             {/* Right Actions & Profile Section */}
             <div className="hidden lg:flex items-center gap-2 sm:gap-3 shrink-0">
                 {/* Switch Button */}
-                <button className="flex items-center gap-2 text-gray-800 font-medium text-sm hover:text-black transition px-2 py-1">
+                <button className="flex items-center gap-2 text-gray-800 font-medium text-sm hover:text-black transition px-2 py-1 cursor-pointer">
                     <ArrowLeftRight className="w-5 h-5 text-gray-700" />
                     <span>Switch</span>
                 </button>
 
                 {/* List Property Button */}
-                <button className="flex items-center gap-2 text-gray-800 font-medium text-sm hover:text-black transition px-2 py-1">
+                <button className="flex items-center gap-2 text-gray-800 font-medium text-sm hover:text-black transition px-2 py-1 cursor-pointer">
                     <Plus className="w-5 h-5 text-gray-700" />
                     <span>List property</span>
                 </button>
 
                 {/* Messages/Chat Icon */}
-                <button className="hidden md:flex w-10 h-10 sm:w-11 sm:h-11 items-center justify-center rounded-2xl border border-gray-200 hover:bg-gray-50 text-gray-700 transition bg-white shadow-sm">
+                <button className="hidden md:flex w-10 h-10 sm:w-11 sm:h-11 items-center justify-center rounded-2xl border border-gray-200 hover:bg-gray-50 text-gray-700 transition bg-white shadow-sm cursor-pointer">
                     <MessageSquare className="w-5 h-5 stroke-[1.8]" />
                 </button>
 
                 {/* Notifications Icon */}
-                <button className="hidden md:flex w-10 h-10 sm:w-11 sm:h-11 items-center justify-center rounded-2xl border border-gray-200 hover:bg-gray-50 text-gray-700 transition bg-white shadow-sm">
+                <button className="hidden md:flex w-10 h-10 sm:w-11 sm:h-11 items-center justify-center rounded-2xl border border-gray-200 hover:bg-gray-50 text-gray-700 transition bg-white shadow-sm cursor-pointer">
                     <Bell className="w-5 h-5 stroke-[1.8]" />
                 </button>
 
                 {/* Profile & Menu Box */}
-                <button className="hidden md:flex items-center gap-3 px-3 py-1.5 h-11 rounded-2xl border border-gray-200 hover:bg-gray-50 transition bg-white shadow-sm">
+                <button className="hidden md:flex items-center gap-3 px-3 py-1.5 h-11 rounded-2xl border border-gray-200 hover:bg-gray-50 transition bg-white shadow-sm cursor-pointer">
                     <Menu className="w-5 h-5 text-gray-700 stroke-[1.8]" />
                     <div className="relative w-8 h-8 rounded-xl overflow-hidden border border-gray-200">
                         <Image
