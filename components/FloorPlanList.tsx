@@ -12,7 +12,7 @@ import rectangleImage from "../public/Rectangle-1.png";
 
 export default function FloorPlanList() {
     return (
-        <div className="flex flex-col md:flex-row gap-5">
+        <div className="flex justify-between flex-col  md:flex-row gap-5">
             <div className="bg-white border border-gray-100 rounded-3xl  shadow-sm hover:shadow-md transition flex p-2">
                 <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 w-full">
 
