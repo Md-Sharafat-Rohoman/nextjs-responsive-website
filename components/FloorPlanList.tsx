@@ -55,7 +55,7 @@ export default function FloorPlanList() {
                             </div>
 
                             {/* Middle Row: Specs */}
-                            <div className="text-[9px] sm:text-xs text-gray-600 flex items-center gap-4 flex-wrap my-1.5 sm:my-0">
+                            <div className="text-[9px] sm:text-xs text-gray-600 flex items-center gap-4 flex-wrap  sm:my-0">
                                 <span className="flex items-center gap-1 font-medium text-gray-700">
                                     <Bed className="w-3 h-3 text-gray-400" /> 1 Bed shared room
                                 </span>
@@ -87,7 +87,7 @@ export default function FloorPlanList() {
                     </div>
 
                     {/* Right Section: Action Buttons */}
-                    <div className="flex flex-row lg:flex-col gap-2 w-full lg:w-auto pt-2.5 lg:pt-0 border-t lg:border-t-0 border-gray-100 shrink-0">
+                    <div className="flex flex-row lg:flex-col gap-2 w-full lg:w-auto  ">
                         <button className="w-full lg:w-25 text-center py-2 px-2 bg-blue-50/70 hover:bg-blue-100 text-blue-600 rounded-xl text-[8px] sm:text-xs font-semibold transition">
                             Rent details
                         </button>
@@ -143,7 +143,7 @@ export default function FloorPlanList() {
                             </div>
 
                             {/* Middle Row: Specs */}
-                            <div className="text-[9px] sm:text-xs text-gray-600 flex items-center gap-4 flex-wrap my-1.5 sm:my-0">
+                            <div className="text-[9px] sm:text-xs text-gray-600 flex items-center gap-4 flex-wrap  sm:my-0">
                                 <span className="flex items-center gap-1 font-medium text-gray-700">
                                     <Bed className="w-3 h-3 text-gray-400" /> 1 Bed shared room
                                 </span>
@@ -175,7 +175,7 @@ export default function FloorPlanList() {
                     </div>
 
                     {/* Right Section: Action Buttons */}
-                    <div className="flex flex-row lg:flex-col gap-2 w-full lg:w-auto pt-2.5 lg:pt-0 border-t lg:border-t-0 border-gray-100 shrink-0">
+                    <div className="flex flex-row lg:flex-col gap-2 w-full lg:w-auto  ">
                         <button className="w-full lg:w-25 text-center py-2 px-2 bg-blue-50/70 hover:bg-blue-100 text-blue-600 rounded-xl text-[8px] sm:text-xs font-semibold transition">
                             Rent details
                         </button>
