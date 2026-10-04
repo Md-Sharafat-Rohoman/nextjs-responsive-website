@@ -43,7 +43,7 @@ export default function PropertyDetails() {
     };
 
     return (
-        <div className="flex flex-col gap-6 w-full max-w-6xl mx-auto my-5 relative px-4 sm:px-0">
+        <div className="flex flex-col gap-6 w-full  my-5 relative px-4 sm:px-0"> {/* max-w-6xl mx-auto */}
             <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 h-auto lg:h-[480px]">
                 <div className="relative rounded-2xl overflow-hidden shadow-sm group h-[320px] sm:h-[350px] w-full lg:h-full">
                     <Image

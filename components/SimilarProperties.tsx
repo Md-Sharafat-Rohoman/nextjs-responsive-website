@@ -42,7 +42,7 @@ export default function SimilarProperties() {
     };
 
     return (
-        <section className="w-full max-w-7xl mx-auto py-8 space-y-6">
+        <section className="w-full  py-8 space-y-6"> {/* max-w-7xl mx-auto */}
             <div className="flex items-center justify-between">
                 <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
                     Similar Properties

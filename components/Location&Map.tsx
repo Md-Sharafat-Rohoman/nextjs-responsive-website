@@ -22,7 +22,7 @@ export default function PropertyMapSection() {
     };
 
     return (
-        <section className="space-y-4 bg-white">
+        <section className="space-y-4  rounded-lg">
             {/* Section Header */}
             <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Location & Map</h2>
 

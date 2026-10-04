@@ -24,7 +24,7 @@ const PropertyDetailsSection = () => {
   const visibleUtilities = showAllUtilities ? utilityServices : utilityServices.slice(0, 4);
 
   return (
-    <div className="p-6 max-w-7xl mx-auto space-y-8 bg-white">
+    <div className="p-6  space-y-8 bg-white rounded-lg"> {/* max-w-7xl mx-auto */}
 
       {/* About this property */}
       <div>
